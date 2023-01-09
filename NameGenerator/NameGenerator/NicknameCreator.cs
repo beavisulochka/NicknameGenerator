@@ -3,39 +3,39 @@ using System.Collections.Generic;
 
 namespace NameGenerator
 {
-	public class NicknameCreator
+    public class NicknameCreator
     {
-		public char[] Vowels = { 'a', 'e', 'i', 'o', 'u', 'y' };
+	public char[] Vowels = { 'a', 'e', 'i', 'o', 'u', 'y' };
 
-		public char[] Constants = { 'b', 'c', 'd', 'f', 'f', 'h', 'j', 'k', 'l', 'm',
-		'n', 'p', 'g', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z' };
+	public char[] Constants = { 'b', 'c', 'd', 'f', 'f', 'h', 'j', 'k', 'l', 'm',
+	'n', 'p', 'g', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z' };
 
-		public string Nickname { get; set; }
+	public string Nickname { get; set; }
 
-		public NicknameCreator()
-		{
+	public NicknameCreator()
+	{
             char firstLetterChar = FirstLetterChoise();
             string firstLetterString = Char.ToString(firstLetterChar);
             char secondLetterChar = SecondLetterChoise(firstLetterChar);
-			string otherLetters = OtherLettersCreate();
+	    string otherLetters = OtherLettersCreate();
 
             string nickname = firstLetterString + secondLetterChar + otherLetters;
             Console.WriteLine($"Your nickname: {nickname}");
 
-			Nickname = nickname;
-		}
+	    Nickname = nickname;
+	}
 
-		public char FirstLetterChoise()
-		{
-			Console.WriteLine("Write first letter for your nickname please.");
+	public char FirstLetterChoise()
+	{
+	    Console.WriteLine("Write first letter for your nickname please.");
 
-			char firstLetter = char.Parse(Console.ReadLine());
+	    char firstLetter = char.Parse(Console.ReadLine());
             
-			return firstLetter;
-		}
+	    return firstLetter;
+	}
 
-		public char SecondLetterChoise(char firstLetter)
-		{
+	public char SecondLetterChoise(char firstLetter)
+	{
             int indexForSecondLetter;
             char secondLetter = '0';
 
@@ -54,22 +54,19 @@ namespace NameGenerator
             }
 
             return secondLetter;
-		}
+	}
 
-		public string OtherLettersCreate()
-		{
+	public string OtherLettersCreate()
+	{
 
             Console.WriteLine("Write how many letters lenght you want?");
-			int lenght = int.Parse(Console.ReadLine());
-			int lenghtMinusFirst = lenght - 2;
-			char[] OtherLetters = new char[lenghtMinusFirst];
+	    int lenght = int.Parse(Console.ReadLine());
+	    int lenghtMinusFirst = lenght - 2;
+            char[] OtherLetters = new char[lenghtMinusFirst];
             string[] LetterVariations = { "first", "second" };
-
-
-			for(int i = 0; i < lenghtMinusFirst; i++)
+		
+	    for(int i = 0; i < lenghtMinusFirst; i++)
             {
-				//int j = i + 1;
-
                 Random rnd = new Random();
 
                 int variationInt = rnd.Next(LetterVariations.Length);
@@ -92,6 +89,6 @@ namespace NameGenerator
 
             return otherLetters;
         }
-	}
+    }
 }
 
