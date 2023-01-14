@@ -1,12 +1,12 @@
 ﻿using System;
 namespace NameGenerator
 {
-	public interface INameGenerator
-	{
+    public interface INameGenerator
+    {
         string NickGenerator();
-		char FirstLetterChoise();
-		char SecondLetterChoise(char firstLetter);
-		string OtherLettersCreate();
+	char FirstLetterChoise();
+	char SecondLetterChoise(char firstLetter);
+	string OtherLettersCreate();
     }
 }
 
