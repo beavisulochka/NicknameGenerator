@@ -1,7 +1,7 @@
 ﻿using System;
 namespace NameGenerator
 {
-	public class NameGenerator : INameGenerator
+    public class NameGenerator : INameGenerator
     {
         public string Nickname { get; set; }
 
